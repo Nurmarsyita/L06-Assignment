@@ -73,26 +73,26 @@
     margin-left: 40%;
 }
 
-/* featured section */
-.section h1 {
-    padding-left: 7%;
-    padding-top: 3%;
+.avatar {
+    border-radius: 50%;
 }
 
-.card-group {
-    margin-top: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+.avatar-online {
+    border: 2px solid rgb(0, 255, 0);
 }
 
-.section {
-    background-color: #F5F5F5;
-    margin-top: 30px;
-    padding-bottom: 5%;
+.avatar-toggle.offline {
+    border: 2px solid grey;
 }
 
-p {
-    font-size: 12px;
+.notification-dropdown .read {
+    font-weight: normal;
+    color: #555;
+}
+
+.notification-dropdown .unread {
+    font-weight: bold;
+    color: darkblue;
 }
 
 @media only screen and (max-width:768px) {

@@ -5,10 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap files -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/0e5950e774.js" crossorigin="anonymous"></script>
+
+    <!-- Add your own css file -->
     <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <!-- Navigation bar dropdown files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Add jQuery UI Autocomplete -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Add your own JavaScript file -->
+
+
     <title>SOI Learning Portal</title>
 </head>
 
@@ -24,31 +46,53 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="https://nurmarsyita.github.io/L06_Exercise1/exercise1.html">About</a>
-                    <a class="nav-link" href="https://nurmarsyita.github.io/L06_Exercise2/index.html">Courses</a>
+                    <a class="nav-link" href="#">About</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">HTML</a>
+                            <a class="dropdown-item" href="#">CSS</a>
+                            <a class="dropdown-item" href="#">PHP</a>
+                            <a class="dropdown-item" href="#">JavaScript</a>
+                            <a class="dropdown-item" href="#">Python</a>
+                            <a class="dropdown-item" href="#">Java</a>
+                            <a class="dropdown-item" href="#">iOS</a>
+                            <a class="dropdown-item" href="#">React</a>
+                    </li>
                     <a class="nav-link" href="#">Contact</a>
                 </div>
             </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn"><span class="fa fa-search"></span></button>
+            <form class="d-flex ms-auto">
+                <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i
+                        class="fa-solid fa-magnifying-glass fa-sm"></i></button>
             </form>
-        </div>
+            </ul>
 
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-bell"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-user"></i>
-                </a>
-            </li>
-        </ul>
+            <ul class="d-flex ms-auto navbar-nav ms-2">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-bell fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu notification-dropdown dropdown-menu-end"
+                        aria-labelledby="notificationsDropdown">
+
+                        <li><a class="dropdown-item" href="#"><b>Amelia Lim</b><br>Amelia likes your comment on one of
+                                your posts!<br><br>2 hours ago, 2:00PM</a></li>
+                        <li><a class="dropdown-item" href="#"><b>Account</b><br>Your account is now verified! You can
+                                now start applying for courses!<br><br>6 hours ago, 7:00AM</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <img src="Images/woman.jpg" alt="Avatar" class="avatar-toggle avatar-online avatar" width="40px"
+                        height="40px">
+                </li>
+            </ul>
     </nav>
 
     <div class="container-fluid" style="background-color: #EDEDED;">
@@ -73,7 +117,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="padding-bottom: 20px;">
         <div class="row">
             <div class="col-sm-4">
                 <i class="fa fa-book fa-5x text-center"></i>
@@ -99,68 +143,250 @@
         </div>
     </div>
 
-    <div class="section">
-        <h1>Featured Courses</h1>
-        <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" src="Images/picture3.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Introduction to HTML and CSS</h5>
-                    <p class="card-text">2h 30m</p>
+    <div class="container-fluid" style="background-color: #ddd; padding: 60px;">
+        <h1 style="padding-bottom: 10px;">Featured Courses</h1>
+        <div class="row">
+            <div id="cardCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- First Set of Cards -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-between">
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">Introduction to HTML and CSS
+                                            </p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 2h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Hannah Lim
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture4.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">User Experience and Interface
+                                                Design</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 2h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Julia Lee
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture5.jpg" card-img-top" alt="Course Image">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">iOS App Development using
+                                                XCode and Swift</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 4h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Ryan Low
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture6.jpg" class="card-img-top" alt="Course Image">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">Front-end Javascript
+                                                Frameworks</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 3h 45min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Azhar Kamar
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Second Set of Cards -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-between">
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">Introduction to HTML and CSS
+                                            </p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 2h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Hannah Lim
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture4.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">User Experience and Interface
+                                                Design</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 2h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Julia Lee
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture5.jpg" card-img-top" alt="Course Image">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">iOS App Development using
+                                                XCode and Swift</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 4h 30min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Ryan Low
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="Images/picture6.jpg" class="card-img-top" alt="Course Image">
+                                    <div class="card-body">
+                                        <b>
+                                            <p class="card-title" style="font-size: 20px;">Front-end Javascript
+                                                Frameworks</p>
+                                        </b>
+                                        <p><i class="fa-solid fa-clock fa-sm"></i> 3h 45min</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fa-solid fa-circle-user fa-sm"></i> Azhar Kamar
+                                        </div>
+                                        <i class="fa-regular fa-bookmark fa-sm" data-bs-toggle="tooltip"
+                                            title="Add to Bookmarks"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Hannah Lim</small>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="Images/picture4.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">User Experience and Interface Design</h5>
-                    <p class="card-text">2h 45m</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Julia Lee</small>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="Images/picture5.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">iOS App Development using Xcode and Swift</h5>
-                    <p class="card-text">4h 30m</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Ryan Low</small>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="Images/picture6.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Front-end JavaScript Frameworks</h5>
-                    <p class="card-text">3h 45m</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Azhar Kamar</small>
-                </div>
+
+                <!-- Controls -->
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
             </div>
         </div>
     </div>
 
+
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-muted">&copy; 2021 SOI Learning Portal. All Rights Reserved.</p>
-      
-          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-          </a>
-      
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Feedback</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Support</a></li>
-          </ul>
+            <p class="col-md-4 mb-0 text-muted" style="font-size: 11px;">&copy; 2021 SOI Learning Portal. All Rights
+                Reserved.</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Feedback</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Support</a></li>
+            </ul>
         </footer>
-      </div>
+    </div>
+
+    <script>
+
+        // Dropdown for notifications
+        $('.notification-dropdown-toggle').dropdown();
+
+        // Toggle feature for avatar image
+        $('.avatar-toggle').click(function () {
+            $(this).toggleClass('offline');
+        });
+
+        // Tooltip for bookmark icon
+        $('[data-bs-toggle="tooltip"]').tooltip();
+
+        // Notification Read/Unread
+        $('.notification-dropdown a').click(function () {
+            $(this).toggleClass('unread');
+        });
+
+        $('.notification-dropdown a').click(function () {
+            $(this).toggleClass('read');
+        });
+
+        // Carousel feature for cards
+        $('#cardCarousel').carousel({
+            interval: 3000, // 3 seconds
+            ride: 'carousel'
+        });
+    </script>
 
 </body>
 
